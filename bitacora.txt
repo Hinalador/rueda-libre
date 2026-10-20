@@ -4,3 +4,5 @@ host: http://127.0.0.1/
 puerto: 5500
 metodo de petición: GET
 codigo de estado: 304
+
+Al intentar añadir /promociones.html en la url del proyecto me salta el error "Cannot GET /promociones.html" ya que es un documento que no está creado dentro de la carpeta de mi proyecto, el servidor envió una solicitud HTTP pero no pudo encontrarla debido a que no tiene ruta. Es equivalente a un error 404.
