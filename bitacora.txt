@@ -1,12 +1,29 @@
+##
 url: http://127.0.0.1:5500/index.html
 protocolo: http
 host: http://127.0.0.1/
 puerto: 5500
 metodo de petición: GET
 codigo de estado: 304
-
+##
 Al intentar añadir /promociones.html en la url del proyecto me salta el error "Cannot GET /promociones.html" ya que es un documento que no está creado dentro de la carpeta de mi proyecto, el servidor envió una solicitud HTTP pero no pudo encontrarla debido a que no tiene ruta. Es equivalente a un error 404.
 
+##
 Html servirá para añadir la información en bloques de mi pagina, añadir imagenes, videos, etc.
 Css para la decoración, como por ejemplo añadir colores, cambiar la disposición de mis bloques, textos, etc.
 Y JS servirá para dar función a mis botones, animaciónes y cargar operaciones en consola.
+
+##
+
+Tabla de rutas usadas desde paginas/tarifas.html:
+
+Archivo de origen | Destino | Ruta escrita
+paginas/tarifas.html | Inicio (index.html) | ../index.html
+paginas/tarifas.html | Tarifas (misma página) | tarifas.html
+paginas/tarifas.html | Reservas (paginas/reservas.html) | reservas.html
+paginas/tarifas.html | Recorridos (sección de tarifas.html) | tarifas.html#recorridos
+paginas/tarifas.html | Encuéntranos (sección esperada de tarifas.html) | tarifas.html#encuentranos
+paginas/tarifas.html | Contacto por correo | mailto:info@ruedalibre.com
+paginas/tarifas.html | Reservas (botón "Hacer una reserva") | /paginas/reservas.html
+
+Nota: tarifas.html no contiene actualmente un elemento con id="encuentranos", por lo que esa ruta no encuentra su destino.
