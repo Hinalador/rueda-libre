@@ -4,51 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles/styles.css">
     <title>Rueda Libre | Alquiler de bicicletas en Medellín</title>
 </head>
 
 <body>
-   <header>
-        <nav>
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Navegación principal">
+            <a class="site-brand" href="index.html">Rueda Libre</a>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="/paginas/tarifas.html">Tarifas</a></li>
-                <li><a href="/paginas/reservas.html">Reservas</a></li>
-                <li><a href="/paginas/tarifas.html#recorridos">Recorridos</a></li>
-                <li><a href="/paginas/tarifas.html#encuentranos">Encuéntranos</a></li>
+                <li><a href="index.html" aria-current="page">Inicio</a></li>
+                <li><a href="paginas/tarifas.html">Tarifas</a></li>
+                <li><a href="paginas/reservas.html">Reservas</a></li>
+                <li><a href="paginas/tarifas.html#recorridos">Recorridos</a></li>
+                <li><a href="#encuentranos">Encuéntranos</a></li>
                 <li><a href="mailto:info@ruedalibre.com">Contáctanos</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <h1>Rueda Libre</h1>
-        <p>Bienvenido a Rueda Libre</p>
-        <section>
+        <section class="page-intro">
+            <h1>Rueda Libre</h1>
+            <p>Bienvenido a Rueda Libre</p>
+        </section>
+        <section class="content-section">
             <h2>¿Quiénes somos?</h2>
             <p>Somos una empresa dedicada al <strong>alquiler de bicicletas en Medellín</strong>, ofreciendo una experiencia
                 única para los amantes del ciclismo.</p>
         </section>
-        <section>
+        <section class="content-section">
             <h2>Nuestras bicicletas</h2>
             <p>Explora nuestra selección de <strong>bicicletas</strong> para alquilar en Medellín.</p>
         </section>
-        <section>
+        <section class="content-section">
             <h2>Nuestros servicios</h2>
-            <div>
+            <div class="services-grid">
+            <article class="service-card">
                 <h3>Alquiler de bicicletas</h3>
                 <p>Ofrecemos una amplia <strong>variedad</strong> de bicicletas para alquilar, desde bicicletas de montaña hasta
                     bicicletas urbanas.</p>
-            </div>
-            <div>
+            </article>
+            <article class="service-card">
                 <h3>Rutas guiadas</h3>
                 <p>Únete a nuestras rutas guiadas por <strong>Medellín</strong> y descubre la ciudad de una manera diferente.</p>
-            </div>
-            <div>
+            </article>
+            <article class="service-card">
                 <h3>Eventos especiales</h3>
                 <p>Organizamos eventos especiales para <strong>amantes del ciclismo</strong>, como competencias y paseos temáticos.</p>
+            </article>
             </div>
         </section>
-        <section>
+        <section class="content-section">
             <h2>¿Cómo alquilar?</h2>
             <ol>
                 <li>Regístrate en nuestro sitio web</li>
@@ -62,33 +68,43 @@
                 <li>Seguro de responsabilidad civil</li>
             </ul>
         </section>
-        <section>
+        <section class="content-section">
             <a href="#encuentranos">
                 <h2>Encuentranos</h2>
             </a>
             <p>Si tienes alguna pregunta o necesitas más información, no dudes en contactarnos.</p>
         </section>
-        <section>
-            <h2>Bikers from hell</h2>
-            <img src="/img/randgruppe-mountain-bike-4297972.jpg" width="700" alt="Bicicletas en Medellín">
-            <p>Explora nuestra galería de imágenes y descubre la belleza de Medellín mientras disfrutas de un paseo en bicicleta.</p>
-            <h2>Activa tu alma</h2>
-            <img src="/img/pexels-jaralol-17331856.jpg" width="500" alt="Bicicletas en Medellín">
-            <p>Vive la experiencia de recorrer Medellín en bicicleta y activa tu alma mientras disfrutas de la naturaleza y la ciudad.</p>
-            <h2>Rueda libre</h2>
-            <img src="/img/pexels-mik-dominguez-1539465333-28193379.jpg" width="500" alt="Bicicletas en Medellín">
-            <p>En Rueda Libre, te ofrecemos la libertad de explorar Medellín a tu propio ritmo, disfrutando de la ciudad y sus paisajes en bicicleta.</p>
+        <section class="content-section">
+            <div class="gallery-grid">
+                <article class="gallery-card">
+                    <h2>Bikers from hell</h2>
+                    <img src="img/randgruppe-mountain-bike-4297972.jpg" alt="Bicicletas en Medellín">
+                    <p>Explora nuestra galería de imágenes y descubre la belleza de Medellín mientras disfrutas de un paseo en bicicleta.</p>
+                </article>
+                <article class="gallery-card">
+                    <h2>Activa tu alma</h2>
+                    <img src="img/pexels-jaralol-17331856.jpg" alt="Bicicletas en Medellín">
+                    <p>Vive la experiencia de recorrer Medellín en bicicleta y activa tu alma mientras disfrutas de la naturaleza y la ciudad.</p>
+                </article>
+                <article class="gallery-card">
+                    <h2>Rueda libre</h2>
+                    <img src="img/pexels-mik-dominguez-1539465333-28193379.jpg" alt="Bicicletas en Medellín">
+                    <p>En Rueda Libre, te ofrecemos la libertad de explorar Medellín a tu propio ritmo, disfrutando de la ciudad y sus paisajes en bicicleta.</p>
+                </article>
+            </div>
         </section>
-        <section id="encuentranos">
-            <a href="https://maps.app.goo.gl/qpVtg4tpWxo6Gxcj6" target="_blank">Ver en el mapa</a>
+        <section class="content-section" id="encuentranos">
+            <h2>Encuéntranos</h2>
+            <a href="https://maps.app.goo.gl/qpVtg4tpWxo6Gxcj6" target="_blank" rel="noopener noreferrer">Ver en el mapa</a>
         </section>
-        <section>
-            <a href="mailto:info@ruedalibre.com">
-                <h2>Contáctanos</h2>
-            </a>
+        <section class="content-section">
+            <h2><a href="mailto:info@ruedalibre.com">Contáctanos</a></h2>
         </section>
-        <button onclick="window.location.href='tarifas.html'">Ver Tarifas</button>
+        <a class="button-link" href="paginas/tarifas.html">Ver Tarifas</a>
     </main>
+    <footer class="site-footer">
+        <p>&copy; 2024 Rueda Libre. Todos los derechos reservados.</p>
+    </footer>
 </body>
 
 </html>

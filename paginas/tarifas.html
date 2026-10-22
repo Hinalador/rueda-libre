@@ -4,63 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Styles/styles.css">
     <title>Tarifas</title>
 </head>
 
 <body>
-    <header>
-        <nav>
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Navegación principal">
+            <a class="site-brand" href="../index.html">Rueda Libre</a>
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
-                <li><a href="tarifas.html">Tarifas</a></li>
+                <li><a href="tarifas.html" aria-current="page">Tarifas</a></li>
                 <li><a href="reservas.html">Reservas</a></li>
                 <li><a href="tarifas.html#recorridos">Recorridos</a></li>
-                <li><a href="tarifas.html#encuentranos">Encuéntranos</a></li>
+                <li><a href="../index.html#encuentranos">Encuéntranos</a></li>
                 <li><a href="mailto:info@ruedalibre.com">Contáctanos</a></li>
             </ul>
         </nav>
     </header>
-    <main style="padding: 20px;">
-        <section>
-            <h2>Tarifas</h2>
+    <main>
+        <section class="page-intro">
+            <h1>Tarifas</h1>
             <p>A continuación, se presentan las tarifas para el alquiler de bicicletas y los recorridos</p>
-            <table style="width: 100%; border-collapse: collapse; border: 1px solid black;">
-                <thead style="background-color: #f2f2f2; border: 1px solid black; text-align: left;">
-                    <tr style="background-color: #f2f2f2;">
+        </section>
+        <section class="content-section">
+            <h2>Alquiler de bicicletas</h2>
+            <div class="table-scroll">
+            <table>
+                <thead>
+                    <tr>
                         <th>Tipo de bicicleta</th>
                         <th>1 hora</th>
                         <th>Medio día (4 horas)</th>
                         <th>Día completo</th>
                     </tr>
                 </thead>
-                <tbody style="border: 1px solid black;">
-                    <tr style="border: 1px solid black;">
+                <tbody>
+                    <tr>
                         <td>Urbana</td>
                         <td>$10.000</td>
                         <td>$30.000</td>
                         <td>$50.000</td>
                     </tr>
-                    <tr style="border: 1px solid black;">
+                    <tr>
                         <td>montaña</td>
                         <td>$15.000</td>
                         <td>$45.000</td>
                         <td>$70.000</td>
                     </tr>
-                    <tr style="border: 1px solid black;">
+                    <tr>
                         <td>Eléctrica</td>
                         <td>$25.000</td>
                         <td>$70.000</td>
                         <td>$110.000</td>
+                    </tr>
                 </tbody>
             </table>
+            </div>
         </section>
-        <section id="recorridos">
+        <section class="content-section" id="recorridos">
             <h2>Recorridos</h2>
             <p>Ofrecemos recorridos guiados por Medellín y sus alrededores. A continuación, se presentan las tarifas
                 para los recorridos:</p>
-            <table style="width: 100%; border-collapse: collapse; border: 1px solid black;">
-                <thead style="background-color: #f2f2f2; border: 1px solid black; text-align: left;">
-                    <tr style="background-color: #f2f2f2;">
+            <div class="table-scroll">
+            <table>
+                <thead>
+                    <tr>
                         <th>Recorrido</th>
                         <th>Distancia</th>
                         <th>Duracion</th>
@@ -68,32 +77,37 @@
                         <th>Precio por persona</th>
                     </tr>
                 </thead>
-                <tbody style="border: 1px solid black;">
-                    <tr style="border: 1px solid black;">
+                <tbody>
+                    <tr>
                         <td>Río y parques</td>
                         <td>12 km</td>
                         <td>2 h</td>
                         <td>Fácil</td>
                         <td>$45.000</td>
                     </tr>
-                    <tr style="border: 1px solid black;">
+                    <tr>
                         <td>Sabores de Barrio</td>
                         <td>15 km</td>
                         <td>3 h</td>
                         <td>Medio</td>
                         <td>$60.000</td>
                     </tr>
-                    <tr style="border: 1px solid black;">
+                    <tr>
                         <td>Reto Las Palmas</td>
                         <td>25 km</td>
                         <td>4h</td>
                         <td>Difícil</td>
                         <td>$85.000</td>
+                    </tr>
                 </tbody>
             </table>
+            </div>
         </section>
-        <a href="/paginas/reservas.html" style="display: inline-block; background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Hacer una reserva</a>
+        <a class="button-link" href="reservas.html">Hacer una reserva</a>
     </main>
+    <footer class="site-footer">
+        <p>&copy; 2024 Rueda Libre. Todos los derechos reservados.</p>
+    </footer>
 </body>
 
 </html>

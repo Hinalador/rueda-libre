@@ -4,34 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Styles/styles.css">
     <title>Reservas</title>
 </head>
 
 <body>
-    <header>
-        <nav>
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Navegación principal">
+            <a class="site-brand" href="../index.html">Rueda Libre</a>
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="tarifas.html">Tarifas</a></li>
-                <li><a href="reservas.html">Reservas</a></li>
+                <li><a href="reservas.html" aria-current="page">Reservas</a></li>
                 <li><a href="tarifas.html#recorridos">Recorridos</a></li>
-                <li><a href="tarifas.html#encuentranos">Encuéntranos</a></li>
+                <li><a href="../index.html#encuentranos">Encuéntranos</a></li>
                 <li><a href="mailto:info@ruedalibre.com">Contáctanos</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <h1>Reserva tu bicicleta</h1>
-        <dl>
+        <section class="page-intro">
+            <h1>Reserva tu bicicleta</h1>
+        </section>
+        <section class="content-section">
+            <dl class="contact-details">
             <dt>Contacto</dt>
             <dd><a href="mailto:info@ruedalibre.com">info@ruedalibre.com</a></dd>
             <dt>Horario de atención</dt>
             <dd>Lunes a viernes: 8:00 AM - 6:00 PM</dd>
             <dd>Sábados: 9:00 AM - 2:00 PM</dd>
             <dd>Domingos: Cerrado</dd>
-        </dl>
+            </dl>
+        </section>
     </main>
-    <footer>
+    <footer class="site-footer">
         <p>&copy; 2024 Rueda Libre. Todos los derechos reservados.</p>
     </footer>
 </body>
