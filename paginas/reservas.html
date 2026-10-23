@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Styles/styles.css">
+    <link rel="stylesheet" href="../Styles/reservas.css">
     <title>Reservas</title>
 </head>
 
@@ -24,21 +25,107 @@
     <main>
         <section class="page-intro">
             <h1>Reserva tu bicicleta</h1>
+            <p>Cuéntanos qué bicicleta necesitas y cuándo quieres salir. Te contactaremos para confirmar disponibilidad.</p>
+        </section>
+        <section class="content-section booking-section" aria-labelledby="booking-title">
+            <div class="booking-heading">
+                <div>
+                    <h2 id="booking-title">Solicitud de reserva</h2>
+                    <p>Los campos marcados con <span aria-hidden="true">*</span> son obligatorios.</p>
+                </div>
+                <a href="tarifas.html">Consultar tarifas</a>
+            </div>
+            <form action="#" method="post" class="booking-form" id="booking-form">
+                <div class="booking-grid">
+                    <div class="booking-field">
+                        <label for="nombre">Nombre completo <span aria-hidden="true">*</span></label>
+                        <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+                    </div>
+                    <div class="booking-field">
+                        <label for="correo">Correo electrónico <span aria-hidden="true">*</span></label>
+                        <input type="email" id="correo" name="correo" autocomplete="email" required>
+                    </div>
+                    <div class="booking-field">
+                        <label for="telefono">Teléfono <span aria-hidden="true">*</span></label>
+                        <input type="tel" id="telefono" name="telefono" autocomplete="tel" required>
+                    </div>
+                    <div class="booking-field">
+                        <label for="fecha">Fecha del alquiler <span aria-hidden="true">*</span></label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+                    <div class="booking-field">
+                        <label for="hora">Hora de recogida <span aria-hidden="true">*</span></label>
+                        <input type="time" id="hora" name="hora" required>
+                    </div>
+                    <div class="booking-field">
+                        <label for="duracion">Duración <span aria-hidden="true">*</span></label>
+                        <select id="duracion" name="duracion" required>
+                            <option value="" selected disabled>Selecciona una duración</option>
+                            <option value="1-hora">1 hora</option>
+                            <option value="medio-dia">Medio día (4 horas)</option>
+                            <option value="dia-completo">Día completo</option>
+                        </select>
+                    </div>
+                    <div class="booking-field">
+                        <label for="cantidad">Cantidad de bicicletas <span aria-hidden="true">*</span></label>
+                        <input type="number" id="cantidad" name="cantidad" min="1" max="10" value="1" required>
+                    </div>
+                    <fieldset class="booking-field bike-types">
+                        <legend>Tipo de bicicleta <span aria-hidden="true">*</span></legend>
+                        <p class="field-hint" id="bike-types-hint">Puedes elegir más de un tipo. Revisa los precios en <a href="tarifas.html">Tarifas</a>.</p>
+                        <div class="bike-options">
+                            <label class="bike-option" for="tipo-urbana">
+                                <input type="checkbox" id="tipo-urbana" name="tipos_bicicleta[]" value="urbana">
+                                <span><strong>Urbana</strong><small>Ideal para moverte por la ciudad.</small></span>
+                            </label>
+                            <label class="bike-option" for="tipo-montana">
+                                <input type="checkbox" id="tipo-montana" name="tipos_bicicleta[]" value="montana">
+                                <span><strong>Montaña</strong><small>Para rutas y terrenos exigentes.</small></span>
+                            </label>
+                            <label class="bike-option" for="tipo-electrica">
+                                <input type="checkbox" id="tipo-electrica" name="tipos_bicicleta[]" value="electrica">
+                                <span><strong>Eléctrica</strong><small>Asistencia para recorrer más.</small></span>
+                            </label>
+                        </div>
+                        <span class="field-error" id="bike-types-error" aria-live="polite"></span>
+                    </fieldset>
+                    <div class="booking-field booking-field-wide">
+                        <label for="comentarios">Comentarios <span>(opcional)</span></label>
+                        <textarea id="comentarios" name="comentarios" rows="3" maxlength="500" placeholder="Cuéntanos si tienes alguna solicitud especial."></textarea>
+                    </div>
+                </div>
+                <button class="booking-submit" type="submit">Solicitar reserva</button>
+            </form>
         </section>
         <section class="content-section">
             <dl class="contact-details">
-            <dt>Contacto</dt>
-            <dd><a href="mailto:info@ruedalibre.com">info@ruedalibre.com</a></dd>
-            <dt>Horario de atención</dt>
-            <dd>Lunes a viernes: 8:00 AM - 6:00 PM</dd>
-            <dd>Sábados: 9:00 AM - 2:00 PM</dd>
-            <dd>Domingos: Cerrado</dd>
+                <dt>¿Tienes dudas?</dt>
+                <dd>Escríbenos a <a href="mailto:info@ruedalibre.com">info@ruedalibre.com</a></dd>
+                <dt>Horario de atención</dt>
+                <dd>Lunes a viernes: 8:00 AM - 6:00 PM</dd>
+                <dd>Sábados: 9:00 AM - 2:00 PM</dd>
+                <dd>Domingos: Cerrado</dd>
             </dl>
         </section>
     </main>
     <footer class="site-footer">
-        <p>&copy; 2024 Rueda Libre. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
     </footer>
+    <script>
+        const bookingForm = document.querySelector("#booking-form");
+        const bikeTypes = bookingForm.querySelectorAll("input[name='tipos_bicicleta[]']");
+        const bikeTypeError = document.querySelector("#bike-types-error");
+
+        function validateBikeTypes() {
+            const hasSelection = Array.from(bikeTypes).some((bikeType) => bikeType.checked);
+            bikeTypes[0].setCustomValidity(hasSelection ? "" : "Selecciona al menos un tipo de bicicleta.");
+            bikeTypeError.textContent = hasSelection ? "" : "Selecciona al menos un tipo de bicicleta.";
+        }
+
+        bikeTypes.forEach((bikeType) => bikeType.addEventListener("change", validateBikeTypes));
+        bookingForm.addEventListener("submit", validateBikeTypes);
+        validateBikeTypes();
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,232 @@
+.booking-section {
+    padding: 0;
+    overflow: hidden;
+}
+
+.booking-heading {
+    display: flex;
+    padding: 28px clamp(22px, 4vw, 36px);
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid var(--color-border);
+    background: #fbfcfb;
+}
+
+.booking-heading h2 {
+    margin-bottom: 6px;
+}
+
+.booking-heading p,
+.booking-heading > a {
+    margin: 0;
+}
+
+.booking-heading p {
+    color: var(--color-muted);
+    font-size: 0.92rem;
+}
+
+.booking-heading p span,
+.booking-field label > span[aria-hidden="true"],
+.bike-types legend > span {
+    color: #a84332;
+}
+
+.booking-heading > a {
+    flex: 0 0 auto;
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+.booking-form {
+    padding: clamp(22px, 4vw, 36px);
+}
+
+.booking-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 18px;
+}
+
+.booking-field {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.booking-field > label,
+.bike-types legend {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--color-ink);
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+.booking-field > label span:not([aria-hidden="true"]) {
+    color: var(--color-muted);
+    font-weight: 400;
+}
+
+.booking-field input:not([type="checkbox"]),
+.booking-field select,
+.booking-field textarea {
+    display: block;
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 12px;
+    border: 1px solid #cbd7cf;
+    border-radius: 7px;
+    background: #ffffff;
+    color: var(--color-ink);
+    font: inherit;
+    line-height: 1.4;
+}
+
+.booking-field textarea {
+    min-height: 96px;
+    resize: vertical;
+}
+
+.booking-field input:focus,
+.booking-field select:focus,
+.booking-field textarea:focus {
+    border-color: var(--color-green);
+    outline: 3px solid rgba(23, 107, 77, 0.16);
+}
+
+.bike-types {
+    grid-column: 1 / -1;
+}
+
+.bike-types legend {
+    margin-bottom: 0;
+}
+
+.field-hint {
+    margin: 5px 0 12px;
+    color: var(--color-muted);
+    font-size: 0.86rem;
+}
+
+.bike-options {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.bike-option {
+    display: flex;
+    min-height: 88px;
+    padding: 14px;
+    align-items: flex-start;
+    gap: 11px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: #fbfcfb;
+    cursor: pointer;
+    transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.bike-option:has(input:checked) {
+    border-color: var(--color-green);
+    background: var(--color-green-soft);
+}
+
+.bike-option input {
+    width: 18px;
+    height: 18px;
+    margin: 2px 0 0;
+    flex: 0 0 auto;
+    accent-color: var(--color-green);
+}
+
+.bike-option span,
+.bike-option small {
+    display: block;
+}
+
+.bike-option strong {
+    color: var(--color-ink);
+}
+
+.bike-option small {
+    margin-top: 3px;
+    color: var(--color-muted);
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+.bike-option input:focus-visible {
+    outline: 3px solid #d5a746;
+    outline-offset: 3px;
+}
+
+.field-error {
+    display: block;
+    min-height: 0;
+    margin-top: 6px;
+    color: #a84332;
+    font-size: 0.86rem;
+}
+
+.field-error:empty {
+    display: none;
+}
+
+.booking-field-wide {
+    grid-column: 1 / -1;
+}
+
+.booking-submit {
+    min-height: 48px;
+    margin-top: 24px;
+    padding: 11px 22px;
+    border: 0;
+    border-radius: 7px;
+    background: var(--color-green);
+    color: #ffffff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.booking-submit:hover {
+    transform: translateY(-1px);
+    background: var(--color-green-dark);
+}
+
+.booking-submit:focus-visible {
+    outline: 3px solid #d5a746;
+    outline-offset: 3px;
+}
+
+@media (max-width: 760px) {
+    .bike-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .booking-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .booking-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bike-types,
+    .booking-field-wide {
+        grid-column: auto;
+    }
+
+    .booking-submit {
+        width: 100%;
+    }
+}

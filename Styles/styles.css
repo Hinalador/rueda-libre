@@ -140,7 +140,7 @@ main {
 }
 
 .content-section h2 {
-    margin: 0 0 14px;
+    margin: 15px 0 14px;
     color: var(--color-green-dark);
     font-size: clamp(1.45rem, 3vw, 1.9rem);
     letter-spacing: -0.025em;
@@ -200,6 +200,12 @@ main {
     border: 1px solid var(--color-border);
     border-radius: 14px;
     background: #fbfcfb;
+}
+
+.gallery-card:hover{
+    box-shadow: var(--shadow-card);
+    transform: scale(1.02);
+    transition: box-shadow 160ms ease, transform 160ms ease;
 }
 
 .gallery-card h2 {
