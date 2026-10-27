@@ -1,6 +1,22 @@
+.booking-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(250px, 1fr);
+    align-items: start;
+    gap: 24px;
+}
+
+.booking-layout > .content-section {
+    min-width: 0;
+    margin: 0;
+}
+
 .booking-section {
     padding: 0;
     overflow: hidden;
+}
+
+.booking-contact h2 {
+    margin-top: 0;
 }
 
 .booking-heading {
@@ -205,6 +221,10 @@
 }
 
 @media (max-width: 760px) {
+    .booking-layout {
+        grid-template-columns: 1fr;
+    }
+
     .bike-options {
         grid-template-columns: 1fr;
     }

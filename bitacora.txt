@@ -35,3 +35,12 @@ Columnas observadas en la cuadrícula:
 1280 px: 4 columnas
 900 px: 3 columnas
 500 px: 1 columna
+
+##
+Decisiones de layout:
+Portada: Grid de dos columnas 1fr 1fr para mostrar el texto a la izquierda y la fotografía a la derecha; en móvil se apila en una columna.
+Galería "Nuestras rutas": Grid de tres columnas para mantener las tres tarjetas en una fila en escritorio; se apila en pantallas pequeñas.
+Reservas: Grid 2fr 1fr para dar dos tercios del ancho al formulario y un tercio al bloque de contacto; en móvil se apila.
+Fila del formulario: Grid de dos columnas para alinear campos relacionados en filas; Documento y Celular comparten una fila. En móvil se usa una columna.
+Encabezado: Flexbox para poner la marca y la navegación en extremos opuestos y centrarlos verticalmente.
+Pie: Flexbox para distribuir marca, contacto y horario en tres bloques de ancho uniforme alineados por arriba.
