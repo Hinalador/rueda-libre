@@ -26,7 +26,8 @@ paginas/tarifas.html | Encuéntranos (sección esperada de tarifas.html) | tarif
 paginas/tarifas.html | Contacto por correo | mailto:info@ruedalibre.com
 paginas/tarifas.html | Reservas (botón "Hacer una reserva") | /paginas/reservas.html
 
-Nota: tarifas.html no contiene actualmente un elemento con id="encuentranos", por lo que esa ruta no encuentra su destino.
+##
+Al estrechar la ventana noté que el menú del nav no es responsive y me queda desordenado, como sin orientación
 
 ##
 Sección "Nuestra flota": cuadrícula adaptable con siete modelos y tarjetas con imagen, descripción, precio por hora y enlace para reservar. Las tarjetas usan Grid con auto-fit y minmax(240px, 1fr), y Flexbox para alinear los enlaces al final.

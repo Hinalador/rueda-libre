@@ -218,6 +218,22 @@ main {
     object-fit: cover;
 }
 
+.image-credit {
+    margin: 0;
+    padding: 6px 12px 0;
+    color: var(--color-muted);
+    font-size: 0.72rem;
+    line-height: 1.4;
+}
+
+.image-credit a {
+    color: var(--color-muted);
+}
+
+.image-credit a:hover {
+    color: var(--color-green-dark);
+}
+
 .fleet-card-content {
     display: flex;
     flex: 1;
