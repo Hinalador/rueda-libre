@@ -133,7 +133,7 @@ main {
 
 .home-hero {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     align-items: center;
     gap: clamp(24px, 5vw, 56px);
 }
@@ -142,7 +142,7 @@ main {
     margin-top: 24px;
 }
 
-.home-hero > img {
+.home-hero>img {
     display: block;
     width: 100%;
     min-height: 280px;
@@ -180,7 +180,7 @@ main {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: 18px;
 }
 
@@ -196,14 +196,16 @@ main {
 }
 
 .fleet-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    align-items: stretch;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 18px;
 }
 
 .fleet-card {
     display: flex;
+    flex: 1 1 240px;
+    max-width: 320px;
     overflow: hidden;
     flex-direction: column;
     border: 1px solid var(--color-border);
@@ -280,13 +282,13 @@ main {
     margin: 7px 0;
 }
 
-.content-section h2 + ul {
+.content-section h2+ul {
     margin-bottom: 0;
 }
 
 .route-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: 20px;
 }
 
@@ -324,7 +326,7 @@ main {
     margin: 0 0 8px;
 }
 
-.route-card-content > p {
+.route-card-content>p {
     margin: 0 0 12px;
 }
 
@@ -460,28 +462,30 @@ tbody tr:nth-child(even) {
 
 @media (max-width: 760px) {
     .site-nav {
+        display: flex;
         width: min(100% - 28px, 600px);
-        padding: 14px 0;
+        padding: 10px 0 8px;
+        flex-direction: column;
         align-items: center;
-        gap: 16px;
+        gap: 4px;
     }
 
     .site-nav ul {
-        justify-content: flex-end;
-        gap: 8px;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
     }
 
     .site-nav li a {
-        padding: 8px;
+        display: block;
+        padding: 7px 10px;
+        white-space: nowrap;
     }
 
     .site-footer-content {
         flex-wrap: wrap;
         gap: 24px;
-    }
-
-    .home-hero {
-        grid-template-columns: 1fr;
     }
 
     .footer-block {
@@ -493,14 +497,43 @@ tbody tr:nth-child(even) {
         padding: 32px 0 48px;
     }
 
+}
+
+@media (min-width: 768px) {
+    .home-hero {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .services-grid,
     .route-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .fleet-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
 }
 
-@media (max-width: 520px) {
-    .footer-block {
-        flex-basis: 100%;
+@media (min-width: 1200px) {
+
+    .services-grid,
+    .route-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.rental-benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
+
+.rental-benefits-grid .content-section {
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .rental-benefits-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }

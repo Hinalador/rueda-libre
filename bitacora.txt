@@ -45,3 +45,15 @@ Reservas: Grid 2fr 1fr para dar dos tercios del ancho al formulario y un tercio 
 Fila del formulario: Grid de dos columnas para alinear campos relacionados en filas; Documento y Celular comparten una fila. En móvil se usa una columna.
 Encabezado: Flexbox para poner la marca y la navegación en extremos opuestos y centrarlos verticalmente.
 Pie: Flexbox para distribuir marca, contacto y horario en tres bloques de ancho uniforme alineados por arriba.
+
+##
+
+Ajustes responsive:
+
+Al revisar el sitio en una vista móvil de 360 px, noté que los enlaces de navegación se repartían en varias filas y el encabezado se veía desordenado. Ajusté el menú para que la marca quede arriba y los enlaces centrados debajo. Comprobé que la página no tenga desplazamiento horizontal.
+
+También revisé la página de tarifas en móvil y encontré que las tablas mantienen un ancho mínimo de 580 px dentro de un espacio de 271 px. Por eso hay que desplazarlas hacia los lados para leerlas completas. Todavía debo ajustar el relleno y el tamaño del texto, o cambiar su presentación para que sean legibles en celular.
+
+Por último, noté que varios diseños de cuadrícula comienzan con varias columnas y luego se reducen con una media query para pantallas pequeñas. Para cumplir el enfoque mobile-first, me falta dejar una columna como estilo base y agregar los cambios para tablet y escritorio con `min-width`.
+
+Pendiente: probar Inicio, Tarifas y Reservas a 360 px, 768 px y 1280 px; anotar los problemas que encuentre y sus soluciones; y comprobar el sitio publicado desde un celular real.
