@@ -4,133 +4,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../Styles/styles.css">
-    <link rel="stylesheet" href="../Styles/reservas.css">
-    <title>Reservas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Reservas | Rueda Libre</title>
 </head>
 
 <body>
-    <header class="site-header">
-        <nav class="site-nav" aria-label="Navegación principal">
-            <a class="site-brand" href="../index.html">Rueda Libre</a>
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="tarifas.html">Tarifas</a></li>
-                <li><a href="reservas.html" aria-current="page">Reservas</a></li>
-            </ul>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm" aria-label="Navegación principal">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-success-emphasis" href="../index.html">Rueda Libre</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false"
+                    aria-label="Abrir navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavigation">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tarifas.html">Tarifas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="reservas.html" aria-current="page">Reservas</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
-    <main>
-        <section class="page-intro">
-            <h1>Reserva tu bicicleta</h1>
-            <p>Cuéntanos qué bicicleta necesitas y cuándo quieres salir. Te contactaremos para confirmar disponibilidad.</p>
+
+    <main class="container py-5">
+        <section class="p-4 p-lg-5 mb-4 bg-light border rounded-4 shadow-sm">
+            <h1 class="display-5 fw-bold text-success-emphasis">Reserva tu bicicleta</h1>
+            <p class="lead mb-0">Cuéntanos qué bicicleta necesitas y cuándo quieres salir. Te contactaremos para
+                confirmar disponibilidad.</p>
         </section>
-        <div class="booking-layout">
-            <section class="content-section booking-section" aria-labelledby="booking-title">
-                <div class="booking-heading">
-                    <div>
-                        <h2 id="booking-title">Solicitud de reserva</h2>
-                        <p>Los campos marcados con <span aria-hidden="true">*</span> son obligatorios.</p>
-                    </div>
-                    <a href="tarifas.html">Consultar tarifas</a>
-                </div>
-                <form action="#" method="post" class="booking-form" id="booking-form">
-                    <div class="booking-grid">
-                        <div class="booking-field">
-                            <label for="nombre">Nombre completo <span aria-hidden="true">*</span></label>
-                            <input type="text" id="nombre" name="nombre" autocomplete="name" required>
-                        </div>
-                        <div class="booking-field">
-                            <label for="correo">Correo electrónico <span aria-hidden="true">*</span></label>
-                            <input type="email" id="correo" name="correo" autocomplete="email" required>
-                        </div>
-                        <div class="booking-field">
-                            <label for="documento">Documento <span aria-hidden="true">*</span></label>
-                            <input type="text" id="documento" name="documento" autocomplete="off" required>
-                        </div>
-                        <div class="booking-field">
-                            <label for="telefono">Celular <span aria-hidden="true">*</span></label>
-                            <input type="tel" id="telefono" name="telefono" autocomplete="tel" required>
-                        </div>
-                        <div class="booking-field">
-                            <label for="fecha">Fecha del alquiler <span aria-hidden="true">*</span></label>
-                            <input type="date" id="fecha" name="fecha" required>
-                        </div>
-                        <div class="booking-field">
-                            <label for="hora">Hora de recogida <span aria-hidden="true">*</span></label>
-                            <input type="time" id="hora" name="hora" required>
-                        </div>
-                        <div class="booking-field">
-                            <label for="duracion">Duración <span aria-hidden="true">*</span></label>
-                            <select id="duracion" name="duracion" required>
-                                <option value="" selected disabled>Selecciona una duración</option>
-                                <option value="1-hora">1 hora</option>
-                                <option value="medio-dia">Medio día (4 horas)</option>
-                                <option value="dia-completo">Día completo</option>
-                            </select>
-                        </div>
-                        <div class="booking-field">
-                            <label for="cantidad">Cantidad de bicicletas <span aria-hidden="true">*</span></label>
-                            <input type="number" id="cantidad" name="cantidad" min="1" max="10" value="1" required>
-                        </div>
-                        <fieldset class="booking-field bike-types">
-                            <legend>Tipo de bicicleta <span aria-hidden="true">*</span></legend>
-                            <p class="field-hint" id="bike-types-hint">Puedes elegir más de un tipo. Revisa los precios en <a href="tarifas.html">Tarifas</a>.</p>
-                            <div class="bike-options">
-                                <label class="bike-option" for="tipo-urbana">
-                                    <input type="checkbox" id="tipo-urbana" name="tipos_bicicleta[]" value="urbana">
-                                    <span><strong>Urbana</strong><small>Ideal para moverte por la ciudad.</small></span>
-                                </label>
-                                <label class="bike-option" for="tipo-montana">
-                                    <input type="checkbox" id="tipo-montana" name="tipos_bicicleta[]" value="montana">
-                                    <span><strong>Montaña</strong><small>Para rutas y terrenos exigentes.</small></span>
-                                </label>
-                                <label class="bike-option" for="tipo-electrica">
-                                    <input type="checkbox" id="tipo-electrica" name="tipos_bicicleta[]" value="electrica">
-                                    <span><strong>Eléctrica</strong><small>Asistencia para recorrer más.</small></span>
-                                </label>
+
+        <div class="row g-4 align-items-start">
+            <section class="col-lg-8" aria-labelledby="booking-title">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light p-4 p-lg-5">
+                        <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-3">
+                            <div>
+                                <h2 class="h3 text-success-emphasis mb-1" id="booking-title">Solicitud de reserva</h2>
+                                <p class="mb-0">Los campos marcados con <span class="text-danger"
+                                        aria-hidden="true">*</span> son obligatorios.</p>
                             </div>
-                            <span class="field-error" id="bike-types-error" aria-live="polite"></span>
-                        </fieldset>
-                        <div class="booking-field booking-field-wide">
-                            <label for="comentarios">Comentarios <span>(opcional)</span></label>
-                            <textarea id="comentarios" name="comentarios" rows="3" maxlength="500" placeholder="Cuéntanos si tienes alguna solicitud especial."></textarea>
+                            <a class="link-success fw-semibold text-nowrap" href="tarifas.html">Consultar tarifas</a>
                         </div>
                     </div>
-                    <button class="booking-submit" type="submit">Solicitar reserva</button>
-                </form>
+                    <form action="#" method="post" id="booking-form">
+                        <div class="card-body p-4 p-lg-5">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label" for="nombre">Nombre completo <span class="text-danger"
+                                            aria-hidden="true">*</span></label>
+                                    <input class="form-control" type="text" id="nombre" name="nombre"
+                                        autocomplete="name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="correo">Correo electrónico <span
+                                            class="text-danger" aria-hidden="true">*</span></label>
+                                    <input class="form-control" type="email" id="correo" name="correo"
+                                        autocomplete="email" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="documento">Documento <span class="text-danger"
+                                            aria-hidden="true">*</span></label>
+                                    <input class="form-control" type="text" id="documento" name="documento"
+                                        autocomplete="off" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="telefono">Celular <span class="text-danger"
+                                            aria-hidden="true">*</span></label>
+                                    <input class="form-control" type="tel" id="telefono" name="telefono"
+                                        autocomplete="tel" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="fecha">Fecha del alquiler <span
+                                            class="text-danger" aria-hidden="true">*</span></label>
+                                    <input class="form-control" type="date" id="fecha" name="fecha" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="hora">Hora de recogida <span class="text-danger"
+                                            aria-hidden="true">*</span></label>
+                                    <input class="form-control" type="time" id="hora" name="hora" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="duracion">Duración <span class="text-danger"
+                                            aria-hidden="true">*</span></label>
+                                    <select class="form-select" id="duracion" name="duracion" required>
+                                        <option value="" selected disabled>Selecciona una duración</option>
+                                        <option value="1-hora">1 hora</option>
+                                        <option value="medio-dia">Medio día (4 horas)</option>
+                                        <option value="dia-completo">Día completo</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="cantidad">Cantidad de bicicletas <span
+                                            class="text-danger" aria-hidden="true">*</span></label>
+                                    <input class="form-control" type="number" id="cantidad" name="cantidad" min="1"
+                                        max="10" value="1" required>
+                                </div>
+                                <fieldset class="col-12 border-0 p-0 m-0">
+                                    <legend class="form-label mb-1">Tipo de bicicleta <span class="text-danger"
+                                            aria-hidden="true">*</span></legend>
+                                    <p class="form-text mt-0 mb-3" id="bike-types-hint">Puedes elegir más de un tipo.
+                                        Revisa los precios en <a href="tarifas.html">Tarifas</a>.</p>
+                                    <div class="row g-3">
+                                        <div class="col-md-4">
+                                            <label
+                                                class="d-flex h-100 align-items-start gap-2 border rounded p-3 bg-body-tertiary"
+                                                for="tipo-urbana">
+                                                <input class="form-check-input flex-shrink-0 mt-1" type="checkbox"
+                                                    id="tipo-urbana" name="tipos_bicicleta[]" value="urbana"
+                                                    aria-describedby="bike-types-hint bike-types-error">
+                                                <span><strong>Urbana</strong><small class="d-block text-body-secondary">Ideal
+                                                        para moverte por la ciudad.</small></span>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label
+                                                class="d-flex h-100 align-items-start gap-2 border rounded p-3 bg-body-tertiary"
+                                                for="tipo-montana">
+                                                <input class="form-check-input flex-shrink-0 mt-1" type="checkbox"
+                                                    id="tipo-montana" name="tipos_bicicleta[]" value="montana">
+                                                <span><strong>Montaña</strong><small class="d-block text-body-secondary">Para
+                                                        rutas y terrenos exigentes.</small></span>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label
+                                                class="d-flex h-100 align-items-start gap-2 border rounded p-3 bg-body-tertiary"
+                                                for="tipo-electrica">
+                                                <input class="form-check-input flex-shrink-0 mt-1" type="checkbox"
+                                                    id="tipo-electrica" name="tipos_bicicleta[]" value="electrica">
+                                                <span><strong>Eléctrica</strong><small class="d-block text-body-secondary">Asistencia
+                                                        para recorrer más.</small></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <span class="invalid-feedback d-block" id="bike-types-error" aria-live="polite"></span>
+                                </fieldset>
+                                <div class="col-12">
+                                    <label class="form-label" for="comentarios">Comentarios <span
+                                            class="text-body-secondary">(opcional)</span></label>
+                                    <textarea class="form-control" id="comentarios" name="comentarios" rows="3"
+                                        maxlength="500"
+                                        placeholder="Cuéntanos si tienes alguna solicitud especial."></textarea>
+                                </div>
+                            </div>
+                            <button class="btn btn-success btn-lg mt-4" type="submit">Solicitar reserva</button>
+                        </div>
+                    </form>
+                </div>
             </section>
-            <aside class="content-section booking-contact" aria-labelledby="contact-title">
-                <h2 id="contact-title">Información de contacto</h2>
-                <dl class="contact-details">
-                    <dt>¿Tienes dudas?</dt>
-                    <dd>Escríbenos a <a href="mailto:info@ruedalibre.com">info@ruedalibre.com</a></dd>
-                    <dt>Horario de atención</dt>
-                    <dd>Lunes a viernes: 8:00 AM - 6:00 PM</dd>
-                    <dd>Sábados: 9:00 AM - 2:00 PM</dd>
-                    <dd>Domingos: Cerrado</dd>
-                </dl>
+
+            <aside class="col-lg-4" aria-labelledby="contact-title">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4 p-lg-5">
+                        <h2 class="h3 text-success-emphasis" id="contact-title">Información de contacto</h2>
+                        <dl class="mb-0">
+                            <dt class="mt-4">¿Tienes dudas?</dt>
+                            <dd>Escríbenos a <a href="mailto:info@ruedalibre.com">info@ruedalibre.com</a></dd>
+                            <dt class="mt-4">Horario de atención</dt>
+                            <dd class="mb-1">Lunes a viernes: 8:00 AM - 6:00 PM</dd>
+                            <dd class="mb-1">Sábados: 9:00 AM - 2:00 PM</dd>
+                            <dd class="mb-0">Domingos: Cerrado</dd>
+                        </dl>
+                    </div>
+                </div>
             </aside>
         </div>
     </main>
-    <footer class="site-footer">
-        <div class="site-footer-content">
-            <section class="footer-block">
-                <p class="footer-brand">Rueda Libre</p>
-                <p class="footer-copyright">&copy; 2026 Todos los derechos reservados.</p>
-            </section>
-            <section class="footer-block">
-                <h2>Contacto</h2>
-                <p><a href="mailto:info@ruedalibre.com">info@ruedalibre.com</a></p>
-            </section>
-            <section class="footer-block">
-                <h2>Horario</h2>
-                <p>Lunes a viernes: 8:00 AM - 6:00 PM</p>
-                <p>Sábados: 9:00 AM - 2:00 PM</p>
-                <p>Domingos: Cerrado</p>
-            </section>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row g-4">
+                <section class="col-md-4">
+                    <p class="h5">Rueda Libre</p>
+                    <p class="mb-0">&copy; 2026 Todos los derechos reservados.</p>
+                </section>
+                <section class="col-md-4">
+                    <h2 class="h5">Contacto</h2>
+                    <p class="mb-0"><a class="link-light" href="mailto:info@ruedalibre.com">info@ruedalibre.com</a>
+                    </p>
+                </section>
+                <section class="col-md-4">
+                    <h2 class="h5">Horario</h2>
+                    <p class="mb-1">Lunes a viernes: 8:00 AM - 6:00 PM</p>
+                    <p class="mb-1">Sábados: 9:00 AM - 2:00 PM</p>
+                    <p class="mb-0">Domingos: Cerrado</p>
+                </section>
+            </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script>
         const bookingForm = document.querySelector("#booking-form");
         const bikeTypes = bookingForm.querySelectorAll("input[name='tipos_bicicleta[]']");
