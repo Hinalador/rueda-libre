@@ -9,14 +9,13 @@
     <title>Reservas | Rueda Libre</title>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <header>
         <nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm" aria-label="Navegación principal">
             <div class="container">
                 <a class="navbar-brand fw-bold text-success-emphasis" href="../index.html">Rueda Libre</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false"
-                    aria-label="Abrir navegación">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation"
+                    aria-controls="mainNavigation" aria-expanded="false" aria-label="Abrir navegación">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="mainNavigation">
@@ -36,7 +35,7 @@
         </nav>
     </header>
 
-    <main class="container py-5">
+    <main class="container flex-grow-1 py-5">
         <section class="p-4 p-lg-5 mb-4 bg-light border rounded-4 shadow-sm">
             <h1 class="display-5 fw-bold text-success-emphasis">Reserva tu bicicleta</h1>
             <p class="lead mb-0">Cuéntanos qué bicicleta necesitas y cuándo quieres salir. Te contactaremos para
@@ -66,8 +65,8 @@
                                         autocomplete="name" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label" for="correo">Correo electrónico <span
-                                            class="text-danger" aria-hidden="true">*</span></label>
+                                    <label class="form-label" for="correo">Correo electrónico <span class="text-danger"
+                                            aria-hidden="true">*</span></label>
                                     <input class="form-control" type="email" id="correo" name="correo"
                                         autocomplete="email" required>
                                 </div>
@@ -84,8 +83,8 @@
                                         autocomplete="tel" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label" for="fecha">Fecha del alquiler <span
-                                            class="text-danger" aria-hidden="true">*</span></label>
+                                    <label class="form-label" for="fecha">Fecha del alquiler <span class="text-danger"
+                                            aria-hidden="true">*</span></label>
                                     <input class="form-control" type="date" id="fecha" name="fecha" required>
                                 </div>
                                 <div class="col-md-6">
@@ -110,7 +109,7 @@
                                         max="10" value="1" required>
                                 </div>
                                 <fieldset class="col-12 border-0 p-0 m-0">
-                                    <legend class="form-label mb-1">Tipo de bicicleta <span class="text-danger"
+                                    <legend class="form-label mb-1 mt-2">Tipo de bicicleta <span class="text-danger"
                                             aria-hidden="true">*</span></legend>
                                     <p class="form-text mt-0 mb-3" id="bike-types-hint">Puedes elegir más de un tipo.
                                         Revisa los precios en <a href="tarifas.html">Tarifas</a>.</p>
@@ -122,7 +121,8 @@
                                                 <input class="form-check-input flex-shrink-0 mt-1" type="checkbox"
                                                     id="tipo-urbana" name="tipos_bicicleta[]" value="urbana"
                                                     aria-describedby="bike-types-hint bike-types-error">
-                                                <span><strong>Urbana</strong><small class="d-block text-body-secondary">Ideal
+                                                <span><strong>Urbana</strong><small
+                                                        class="d-block text-body-secondary">Ideal
                                                         para moverte por la ciudad.</small></span>
                                             </label>
                                         </div>
@@ -132,7 +132,8 @@
                                                 for="tipo-montana">
                                                 <input class="form-check-input flex-shrink-0 mt-1" type="checkbox"
                                                     id="tipo-montana" name="tipos_bicicleta[]" value="montana">
-                                                <span><strong>Montaña</strong><small class="d-block text-body-secondary">Para
+                                                <span><strong>Montaña</strong><small
+                                                        class="d-block text-body-secondary">Para
                                                         rutas y terrenos exigentes.</small></span>
                                             </label>
                                         </div>
@@ -142,12 +143,14 @@
                                                 for="tipo-electrica">
                                                 <input class="form-check-input flex-shrink-0 mt-1" type="checkbox"
                                                     id="tipo-electrica" name="tipos_bicicleta[]" value="electrica">
-                                                <span><strong>Eléctrica</strong><small class="d-block text-body-secondary">Asistencia
+                                                <span><strong>Eléctrica</strong><small
+                                                        class="d-block text-body-secondary">Asistencia
                                                         para recorrer más.</small></span>
                                             </label>
                                         </div>
                                     </div>
-                                    <span class="invalid-feedback d-block" id="bike-types-error" aria-live="polite"></span>
+                                    <span class="invalid-feedback d-block" id="bike-types-error"
+                                        aria-live="polite"></span>
                                 </fieldset>
                                 <div class="col-12">
                                     <label class="form-label" for="comentarios">Comentarios <span
@@ -181,7 +184,7 @@
         </div>
     </main>
 
-    <footer class="bg-dark text-white py-4">
+    <footer class="bg-dark text-white py-4 mt-auto">
         <div class="container">
             <div class="row g-4">
                 <section class="col-md-4">
