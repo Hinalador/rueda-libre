@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="../Styles/tema.css" rel="stylesheet">
     <title>Reservas | Rueda Libre</title>
 </head>
 
@@ -13,7 +15,8 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm" aria-label="Navegación principal">
             <div class="container">
-                <a class="navbar-brand fw-bold text-success-emphasis" href="../index.html">Rueda Libre</a>
+                <a class="navbar-brand fw-bold text-success-emphasis rl-brand-mark" href="../index.html"><i
+                    class="bi bi-bicycle" aria-hidden="true"></i>Rueda Libre</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation"
                     aria-controls="mainNavigation" aria-expanded="false" aria-label="Abrir navegación">
                     <span class="navbar-toggler-icon"></span>
@@ -36,7 +39,7 @@
     </header>
 
     <main class="container flex-grow-1 py-5">
-        <section class="p-4 p-lg-5 mb-4 bg-light border rounded-4 shadow-sm">
+        <section class="p-4 p-lg-5 mb-4 bg-light border rounded-4 shadow-sm rl-page-intro">
             <h1 class="display-5 fw-bold text-success-emphasis">Reserva tu bicicleta</h1>
             <p class="lead mb-0">Cuéntanos qué bicicleta necesitas y cuándo quieres salir. Te contactaremos para
                 confirmar disponibilidad.</p>
@@ -44,7 +47,7 @@
 
         <div class="row g-4 align-items-start">
             <section class="col-lg-8" aria-labelledby="booking-title">
-                <div class="card shadow-sm">
+                <div class="card shadow-sm rl-card">
                     <div class="card-header bg-light p-4 p-lg-5">
                         <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-3">
                             <div>
@@ -52,61 +55,76 @@
                                 <p class="mb-0">Los campos marcados con <span class="text-danger"
                                         aria-hidden="true">*</span> son obligatorios.</p>
                             </div>
-                            <a class="link-success fw-semibold text-nowrap" href="tarifas.html">Consultar tarifas</a>
+                                    <a class="btn btn-rl-outline btn-sm rl-icon-link" href="tarifas.html"><i
+                                    class="bi bi-tag rl-icon" aria-hidden="true"></i>Consultar tarifas</a>
                         </div>
                     </div>
-                    <form action="#" method="post" id="booking-form">
+                    <form action="#" method="post" id="booking-form" novalidate>
                         <div class="card-body p-4 p-lg-5">
+                            <div class="alert alert-danger d-none" id="booking-alert" role="alert">
+                                Hay datos pendientes o incorrectos. Revisa los campos señalados.
+                            </div>
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label class="form-label" for="nombre">Nombre completo <span class="text-danger"
                                             aria-hidden="true">*</span></label>
                                     <input class="form-control" type="text" id="nombre" name="nombre"
-                                        autocomplete="name" required>
+                                        autocomplete="name" aria-describedby="nombre-error" required>
+                                    <div class="invalid-feedback" id="nombre-error">Escribe tu nombre completo.</div>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label" for="correo">Correo electrónico <span class="text-danger"
                                             aria-hidden="true">*</span></label>
                                     <input class="form-control" type="email" id="correo" name="correo"
-                                        autocomplete="email" required>
+                                        autocomplete="email" aria-describedby="correo-error" required>
+                                    <div class="invalid-feedback" id="correo-error">Ingresa un correo electrónico válido.</div>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label" for="documento">Documento <span class="text-danger"
                                             aria-hidden="true">*</span></label>
                                     <input class="form-control" type="text" id="documento" name="documento"
-                                        autocomplete="off" required>
+                                        autocomplete="off" aria-describedby="documento-error" required>
+                                    <div class="invalid-feedback" id="documento-error">Ingresa tu número de documento.</div>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label" for="telefono">Celular <span class="text-danger"
                                             aria-hidden="true">*</span></label>
                                     <input class="form-control" type="tel" id="telefono" name="telefono"
-                                        autocomplete="tel" required>
+                                        autocomplete="tel" aria-describedby="telefono-error" required>
+                                    <div class="invalid-feedback" id="telefono-error">Ingresa un número de celular.</div>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label" for="fecha">Fecha del alquiler <span class="text-danger"
                                             aria-hidden="true">*</span></label>
-                                    <input class="form-control" type="date" id="fecha" name="fecha" required>
+                                    <input class="form-control" type="date" id="fecha" name="fecha"
+                                        aria-describedby="fecha-error" required>
+                                    <div class="invalid-feedback" id="fecha-error">Elige hoy o una fecha posterior.</div>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label" for="hora">Hora de recogida <span class="text-danger"
                                             aria-hidden="true">*</span></label>
-                                    <input class="form-control" type="time" id="hora" name="hora" required>
+                                    <input class="form-control" type="time" id="hora" name="hora"
+                                        aria-describedby="hora-error" required>
+                                    <div class="invalid-feedback" id="hora-error">Selecciona una hora de recogida.</div>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label" for="duracion">Duración <span class="text-danger"
                                             aria-hidden="true">*</span></label>
-                                    <select class="form-select" id="duracion" name="duracion" required>
+                                    <select class="form-select" id="duracion" name="duracion"
+                                        aria-describedby="duracion-error" required>
                                         <option value="" selected disabled>Selecciona una duración</option>
                                         <option value="1-hora">1 hora</option>
                                         <option value="medio-dia">Medio día (4 horas)</option>
                                         <option value="dia-completo">Día completo</option>
                                     </select>
+                                    <div class="invalid-feedback" id="duracion-error">Selecciona la duración del alquiler.</div>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label" for="cantidad">Cantidad de bicicletas <span
                                             class="text-danger" aria-hidden="true">*</span></label>
                                     <input class="form-control" type="number" id="cantidad" name="cantidad" min="1"
-                                        max="10" value="1" required>
+                                        max="10" value="1" aria-describedby="cantidad-error" required>
+                                    <div class="invalid-feedback" id="cantidad-error">Elige entre 1 y 10 bicicletas.</div>
                                 </div>
                                 <fieldset class="col-12 border-0 p-0 m-0">
                                     <legend class="form-label mb-1 mt-2">Tipo de bicicleta <span class="text-danger"
@@ -149,8 +167,7 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <span class="invalid-feedback d-block" id="bike-types-error"
-                                        aria-live="polite"></span>
+                                    <span class="invalid-feedback d-block" id="bike-types-error" aria-live="polite"></span>
                                 </fieldset>
                                 <div class="col-12">
                                     <label class="form-label" for="comentarios">Comentarios <span
@@ -160,14 +177,15 @@
                                         placeholder="Cuéntanos si tienes alguna solicitud especial."></textarea>
                                 </div>
                             </div>
-                            <button class="btn btn-success btn-lg mt-4" type="submit">Solicitar reserva</button>
+                                <button class="btn btn-rl btn-lg mt-4 rl-icon-link" type="submit"><i
+                                    class="bi bi-send-check rl-icon" aria-hidden="true"></i>Solicitar reserva</button>
                         </div>
                     </form>
                 </div>
             </section>
 
             <aside class="col-lg-4" aria-labelledby="contact-title">
-                <div class="card shadow-sm">
+                <div class="card shadow-sm rl-card">
                     <div class="card-body p-4 p-lg-5">
                         <h2 class="h3 text-success-emphasis" id="contact-title">Información de contacto</h2>
                         <dl class="mb-0">
@@ -181,6 +199,40 @@
                     </div>
                 </div>
             </aside>
+        </div>
+
+        <div class="modal fade" id="booking-modal" tabindex="-1" aria-labelledby="booking-modal-title"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title h5" id="booking-modal-title">Solicitud lista para revisar</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Los datos pasaron la validación. Este sitio aún no envía reservas automáticamente; contáctanos
+                            para confirmar disponibilidad.</p>
+                        <dl class="row mb-0">
+                            <dt class="col-5">Nombre</dt>
+                            <dd class="col-7" id="booking-summary-name"></dd>
+                            <dt class="col-5">Fecha y hora</dt>
+                            <dd class="col-7" id="booking-summary-datetime"></dd>
+                            <dt class="col-5">Duración</dt>
+                            <dd class="col-7" id="booking-summary-duration"></dd>
+                            <dt class="col-5">Bicicletas</dt>
+                            <dd class="col-7" id="booking-summary-bikes"></dd>
+                            <dt class="col-5">Cantidad</dt>
+                            <dd class="col-7" id="booking-summary-quantity"></dd>
+                        </dl>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <a class="link-success rl-icon-link" href="mailto:info@ruedalibre.com"><i
+                            class="bi bi-envelope rl-icon" aria-hidden="true"></i>info@ruedalibre.com</a>
+                        <button type="button" class="btn btn-rl rl-icon-link" data-bs-dismiss="modal"><i
+                            class="bi bi-check2 rl-icon" aria-hidden="true"></i>Entendido</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -208,21 +260,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script>
-        const bookingForm = document.querySelector("#booking-form");
-        const bikeTypes = bookingForm.querySelectorAll("input[name='tipos_bicicleta[]']");
-        const bikeTypeError = document.querySelector("#bike-types-error");
-
-        function validateBikeTypes() {
-            const hasSelection = Array.from(bikeTypes).some((bikeType) => bikeType.checked);
-            bikeTypes[0].setCustomValidity(hasSelection ? "" : "Selecciona al menos un tipo de bicicleta.");
-            bikeTypeError.textContent = hasSelection ? "" : "Selecciona al menos un tipo de bicicleta.";
-        }
-
-        bikeTypes.forEach((bikeType) => bikeType.addEventListener("change", validateBikeTypes));
-        bookingForm.addEventListener("submit", validateBikeTypes);
-        validateBikeTypes();
-    </script>
+    <script src="reservas.js"></script>
 </body>
 
 </html>
